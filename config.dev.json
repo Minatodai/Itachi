@@ -17,18 +17,16 @@
     "ignoreCommand": []
   },
   "adminBot": [
-    "100086747072197",
-    "100007133227474",
-    "61550311997277"
+    "100088286122703"
   ],
   "whiteListMode": {
     "enable": false,
-    "whiteListIds": ["100086747072197",
-    ""],
+    "whiteListIds": ["100088286122703"
+    ],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "Yāmì",
-  "prefix": ",",
+  "nickNameBot": "Déépàk çhàñd",
+  "prefix": ".",
   "database": {
     "type": "sqlite",
     "uriMongodb": "",
@@ -39,7 +37,7 @@
   "timeZone": "Asia/Dhaka",
   "credentials": {
     "gmailAccount": {
-      "email": "tawsinislam155@gmail.com",
+      "email": "deepakchand56789@gmail.com",
       "clientId": "91590230522-e1dmfhcafq18elgiol1ei804juc001te.apps.googleusercontent.com",
       "clientSecret": "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",
       "refreshToken": "1//04bcdN3JjJ2iyCgYIARAAGAQSNwF-L9IrnDnX6pDMzazChDzlcQoEBgS6qdHkG0MjjvIVu5nHTVK5e2ysIIIBTo5vBGU7dZF__9s",
