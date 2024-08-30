@@ -1,31 +1,38 @@
-const moment = require('moment');
-
 module.exports = {
   config: {
     name: "uptime",
-    aliases: ['upt'],
+    aliases: ["upt", "up", "u"],
     version: "1.0",
-    author: "HeDroxuu",
+    author: "OtinXSandip",
+    role: 0,
+    shortDescription: {
+      en: "Displays the total number of users of the bot and check uptime "
+    },
+    longDescription: {
+      en: "Displays the total number of users who have interacted with the bot and check uptime."
+    },
     category: "system",
     guide: {
-      en: "Use {p}uptime or {p}upt"
+      en: "Use {p}totalusers to display the total number of users of the bot and check uptime."
     }
   },
-  onStart: async function ({ message }) {
-    const uptime = process.uptime();
-    const formattedUptime = formatMilliseconds(uptime * 1000);
-
-    const response = `╭╼╾『𝐒𝐲𝐬𝐭𝐞𝐦 𝐔𝐩𝐭𝐢𝐦𝐞』\n${formattedUptime}`;
-
-    message.reply(response);
+  onStart: async function ({ api, event, args, usersData, threadsData }) {
+    try {
+      const allUsers = await usersData.getAll();
+      const allThreads = await threadsData.getAll();
+      const uptime = process.uptime();
+      
+      const days = Math.floor(uptime / 86400);
+      const hours = Math.floor((uptime % 86400) / 3600);
+      const minutes = Math.floor((uptime % 3600) / 60);
+      const seconds = Math.floor(uptime % 60);
+      
+      const uptimeString = `${days} days ${hours}Hrs ${minutes}min ${seconds}sec`;
+      
+      api.sendMessage(`⏰ | Bot running time\n☞ ${uptimeString}\n\n👪 | Total Users\n☞ ${allUsers.length}\n🌸 | Total threads\n☞ ${allThreads.length}`, event.threadID);
+    } catch (error) {
+      console.error(error);
+      api.sendMessage("An error occurred while retrieving data.", event.threadID);
+    }
   }
 };
-
-function formatMilliseconds(ms) {
-  const seconds = Math.floor(ms / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hours = Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
-
-  return `╰─> 𝐃𝐚𝐲𝐬 ─ ${days}\n╰─> 𝐇𝐫𝐬 ─ ${hours % 24}\n╰─> 𝐌𝐢𝐧𝐬 ─ ${minutes % 60}\n╰─> 𝐒𝐞𝐜 ─ ${seconds % 60}`;
-}
