@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `TO DO LIST \n ITS ME TOBI💐🌹`; // replace with your name 
+      msg += `HEY ITS ME CLASHER BOT💐\n MY OWNER IS ANMOL🌹`; // replace with your name 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -62,12 +62,24 @@ module.exports = {
       const totalCommands = commands.size;
       msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 ${totalCommands} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
       msg += `𝗧𝘆𝗽𝗲 ${prefix} 𝗵𝗲𝗹𝗽 𝗰𝗺𝗱𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`
-      msg += `🐐 | MINATO`; // its not decoy so change it if you want 
+      msg += `🐐 | ANMOL`; // its not decoy so change it if you want 
 
-      
+      const helpListImages = [
+        "", // add image link here
+        "",
+        "",
+        "",
+        "",
+        // Add more image links as needed
+      ];
 
-      
-    {
+      const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
+
+      await message.reply({
+        body: msg,
+        attachment: await global.utils.getStreamFromURL(helpListImage),
+      });
+    } else {
       const commandName = args[0].toLowerCase();
       const command = commands.get(commandName) || commands.get(aliases.get(commandName));
 
@@ -117,4 +129,4 @@ function roleTextToString(roleText) {
     default:
       return "Unknown role";
   }
-}
+                                                        }
