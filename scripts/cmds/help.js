@@ -67,7 +67,7 @@ module.exports = {
       
 
       
-    } else {
+    {
       const commandName = args[0].toLowerCase();
       const command = commands.get(commandName) || commands.get(aliases.get(commandName));
 
