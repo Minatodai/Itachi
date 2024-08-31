@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `HEY ITS ME CLASHER BOT💐\n MY OWNER IS ANMOL🌹`; // replace with your name 
+      msg += `I AM TOBI BOT MADE BY MINATO SENSEI \n TO DO LIST 🌹💐`; // replace with your name 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -62,14 +62,17 @@ module.exports = {
       const totalCommands = commands.size;
       msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 ${totalCommands} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
       msg += `𝗧𝘆𝗽𝗲 ${prefix} 𝗵𝗲𝗹𝗽 𝗰𝗺𝗱𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`
-      msg += `🐐 | ANMOL`; // its not decoy so change it if you want 
+      msg += `🐐 | MINATO SENSEI 😌💐`; // its not decoy so change it if you want 
 
       const helpListImages = [
-        "", // add image link here
-        "",
-        "",
-        "",
-        "",
+        "https://i.ibb.co/vmbQDP2/image.jpg", // add image link here
+        "https://i.ibb.co/qrq37f6/image.jpg",
+        "https://i.ibb.co/mHF00Kv/image.jpg",
+        "https://i.ibb.co/JWZj6Cv/image.jpg",
+        "https://i.ibb.co/FgY9D9F/image.jpg",
+        "https://i.ibb.co/2FJ7mC8/image.jpg",
+        "https://i.ibb.co/yFZN78J/image.jpg",
+        
         // Add more image links as needed
       ];
 
