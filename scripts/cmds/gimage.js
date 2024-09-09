@@ -4,7 +4,7 @@ const axios = require('axios');
 module.exports = {
   config: {
     name: "googleimg",
-    aliases: "gimage"
+    aliases: ["gimage"]
     author: "luffy",
     version: "2.0",
     description: "Search for images using Google Images and return a specified number of results.",
