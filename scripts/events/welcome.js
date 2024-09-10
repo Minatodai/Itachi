@@ -2,8 +2,8 @@ const { getTime, drive } = global.utils;
 if (!global.temp.welcomeEvent)
 	global.temp.welcomeEvent = {};
 const ownerInfo = {
-	name: "Ace Gerome",
-	facebookLink: "facebook.com/ace.gerome", 
+	name: "Mi Na To Senpai💐😚",
+	facebookLink: "https://www.facebook.com/profile.php?id=100087975355210", 
 	 
 };
 
