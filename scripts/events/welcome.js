@@ -1,11 +1,6 @@
 const { getTime, drive } = global.utils;
 if (!global.temp.welcomeEvent)
 	global.temp.welcomeEvent = {};
-const ownerInfo = {
-	name: "Mi Na To Senpai💐😚",
-	facebookLink: "https://www.facebook.com/profile.php?id=100087975355210", 
-	 
-};
 
 module.exports = {
 	config: {
@@ -31,7 +26,7 @@ module.exports = {
 			session2: "noon",
 			session3: "afternoon",
 			session4: "evening",
-			welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help\n\n━ 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢 ━\n❐ Name: %2\n❒ Link: %3,
+			welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help \n\n ░░OWNER INFO░░\n ★ Name: ＭＩ ＮＡ ＴＯ \n ★ Link To Fb: https://www.facebook.com/profile.php?id=100087975355210",
 			multiple1: "you",
 			multiple2: "you guys",
 			defaultWelcomeMessage: `Hello {userName}.\nWelcome {multiple} to the chat group: {boxName}\nHave a nice {session} 😊`
@@ -41,7 +36,6 @@ module.exports = {
 	onStart: async ({ threadsData, message, event, api, getLang }) => {
 		if (event.logMessageType == "log:subscribe")
 			return async function () {
-				const { name, age, gender, status, hobby, facebookLink, relationship, bio } = ownerInfo;
 				const hours = getTime("HH");
 				const { threadID } = event;
 				const { nickNameBot } = global.GoatBot.config;
@@ -51,7 +45,7 @@ module.exports = {
 				if (dataAddedParticipants.some((item) => item.userFbId == api.getCurrentUserID())) {
 					if (nickNameBot)
 						api.changeNickname(nickNameBot, threadID, api.getCurrentUserID());
-					return message.send(getLang("welcomeMessage", prefix, name, age, gender, status, hobby, facebookLink, relationship, bio));
+					return message.send(getLang("welcomeMessage", prefix));
 				}
 				// if new member:
 				if (!global.temp.welcomeEvent[threadID])
