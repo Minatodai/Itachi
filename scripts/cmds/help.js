@@ -72,6 +72,9 @@ module.exports = {
         "https://i.ibb.co/FgY9D9F/image.jpg",
         "https://i.ibb.co/2FJ7mC8/image.jpg",
         "https://i.ibb.co/yFZN78J/image.jpg",
+        "https://i.ibb.co/hdPp7mp/image.gif",
+        "https://i.ibb.co/qnYwxpX/image.gif",
+        "https://i.ibb.co/WxDWwHZ/image.gif",
         
         // Add more image links as needed
       ];
