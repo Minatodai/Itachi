@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const chatHistoryDir = 'groqllama70b';
-const apiKey = 'your_api_key';
+const apiKey = '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';
 
 const groq = new Groq({ apiKey });
 
