@@ -6,22 +6,31 @@ module.exports = {
   config: {
     name: "bin",
     version: "1.0",
-    author: "SANDIP",
+    author: "Morgan",
     countDown: 5,
-    role: 0,
+    role: 2,
     shortDescription: {
       en: "Upload files to pastebin and sends link"
     },
     longDescription: {
       en: "This command allows you to upload files to pastebin and sends the link to the file."
     },
-    category: "owner",
+    category: "Utility",
     guide: {
       en: "To use this command, type !pastebin <filename>. The file must be located in the 'cmds' folder."
     }
   },
 
   onStart: async function({ api, event, args }) {
+    const permission = ["61560827459028"];
+    if (!permission.includes(event.senderID)) {
+      return api.sendMessage(
+        "Only Morgan can use tbis command",
+        event.threadID,
+        event.messageID
+      );
+    }
+
     const pastebin = new PastebinAPI({
       api_dev_key: 'LFhKGk5aRuRBII5zKZbbEpQjZzboWDp9',
       api_user_key: 'LFhKGk5aRuRBII5zKZbbEpQjZzboWDp9',
@@ -40,20 +49,20 @@ module.exports = {
     fs.readFile(filePath, 'utf8', async (err, data) => {
       if (err) throw err;
 
-      const paste = await pastebin
-        .createPaste({
+      try {
+        const paste = await pastebin.createPaste({
           text: data,
           title: fileName,
           format: null,
           privacy: 1,
-        })
-        .catch((error) => {
-          console.error(error);
         });
 
-      const rawPaste = paste.replace("pastebin.com", "pastebin.com/raw");
-
-      api.sendMessage(`${rawPaste}`, event.threadID);
+        const rawPaste = paste.replace("pastebin.com", "pastebin.com/raw");
+        api.sendMessage(rawPaste, event.threadID);
+      } catch (error) {
+        console.error(error);
+        api.sendMessage('An error occurred while uploading the file to Pastebin.', event.threadID);
+      }
     });
-  },
+  }
 };
