@@ -111,8 +111,8 @@ async function GetOutputFb(url) {
 
 async function GetOutputIns(url) {
   const response = await axios.get(`https://insta-kshitiz.vercel.app/insta?url=${url}`);
-  return response.data.video;
-  
+  return response.data.url;
+
 }
 
 async function GetOutputTik(url) {
@@ -496,18 +496,18 @@ module.exports = {
           url === "http://youtu.be") {
           return;
         }
-      
+
         api.setMessageReaction("⌛", event.messageID, () => { }, true);
-      
+
         try {
           const filePath = await GetOutputYt(url);
 
           await message.reply({
             attachment: fs.createReadStream(filePath)
           });
-      
+
           await api.setMessageReaction("✅", event.messageID, () => { }, true);
-      
+
           fs.unlinkSync(filePath);
         } catch (err) {
           api.setMessageReaction("❌", event.messageID, () => { }, true);
