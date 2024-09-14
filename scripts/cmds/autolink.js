@@ -110,7 +110,7 @@ async function GetOutputFb(url) {
 }
 
 async function GetOutputIns(url) {
-  const response = await axios.get(`https://for-devs.onrender.com/api/instadl?url=${url}&apikey=${api_key}`);
+  const response = await axios.get(`https://insta-kshitiz.vercel.app/insta?url=${url}`);
   return response.data.video;
   
 }
