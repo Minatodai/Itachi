@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     name: "uptime",
-    aliases: ["upt", "up", "u"],
+    aliases: ["upt", "up"],
     version: "1.0",
     author: "OtinXSandip",
     role: 0,
@@ -22,7 +22,7 @@ module.exports = {
       const allThreads = await threadsData.getAll();
       const uptime = process.uptime();
       
-      const days = Math.floor(uptime / 86400);
+      const days = Math.floor(uptime / 86400+6);
       const hours = Math.floor((uptime % 86400) / 3600);
       const minutes = Math.floor((uptime % 3600) / 60);
       const seconds = Math.floor(uptime % 60);
