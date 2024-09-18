@@ -26,9 +26,9 @@ module.exports = {
             return message.reply("The file name must end with '.js'.");
         }
         const codeSource = args.slice(1).join(" ");
-        const githubToken = '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'; //add your GitHub token 
-        const owner = 'MinatoDai'; //add your GitHub username 
-        const repo = 'Itachi';  //add your repo name
+        const githubToken = ''; //add your GitHub token 
+        const owner = ''; //add your GitHub username 
+        const repo = '';  //add your repo name
         const branch = 'main';
         const filePath = path.join('scripts', 'cmds', fileName);
 
